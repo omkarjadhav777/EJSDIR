@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+< lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instgram</title>
+   <link rel="stylesheet" href="/style.css">
+  
+</head> -->
+
+<%-include("includes/head.ejs")%>
+
+<body>
+    <h2>this page belogs to @<%=data.name%> </h2>  
+    <!-- <=username%> -->
+    <button>follow</button>
+    <button>messege</button>
+    <!-- <h3>Accounts that follow you: </h3> -->
+    <!-- <ul>
+        <!-- <for(let name of followers){%> -->
+            <!-- <li><=name%></li>     -->
+            <!-- name aslo variable so in use ejs tag -->
+      <!-- < }%> -->
+    <!-- </ul> --> 
+
+   <p>Followers: <%=data.followers%>&nbsp;&nbsp;&nbsp;&nbsp;
+   Followers: <%=data.following%></p>
+    <hr/>
+   <% for(let post of data.posts){%>
+        <img src="<%=post.image%>" alt="some img">
+        <p>
+            Likes: <%=post.likes%>&nbsp;&nbsp;&nbsp;&nbsp;
+            comments: <%=post.comments%></p>
+   <%}%>
+
+   <%-include("includes/footer.ejs")%>
+</body>
+<script src="/app.js"></script>
+</html>
+
